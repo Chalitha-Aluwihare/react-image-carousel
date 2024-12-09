@@ -2,9 +2,8 @@ import Slider from "./components/slider/Slider"
 
 const App = () => {
   return (
-    <div>
+    <div className="bg-slate-300">
       <Slider />
-      <h1>Hello</h1>
     </div>
   )
 }
