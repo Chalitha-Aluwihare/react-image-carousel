@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { SliderData } from "../../data/data";
-import {BiSolidSkipPreviousCircle,BiSolidSkipNextCircle,} from "react-icons/bi";
+import {
+  BiSolidSkipPreviousCircle,
+  BiSolidSkipNextCircle,
+} from "react-icons/bi";
 
 const Slider = () => {
   const [activeImg, setActiveImg] = useState(0);
@@ -15,16 +18,15 @@ const Slider = () => {
     setActiveImg((prev) => (prev === SliderData.length - 1 ? 0 : prev + 1));
   };
 
-  useEffect(()=>{
-    let timer = setTimeout(()=>{
+  useEffect(() => {
+    let timer = setTimeout(() => {
       handleNext();
-    },3000)
+    }, 3000);
 
-    return()=>{
-      clearTimeout(timer)
-    }
-    
-  },[activeImg])
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [activeImg]);
 
   return (
     <div className="relative w-full h-auto p-10">
